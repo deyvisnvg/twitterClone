@@ -9,6 +9,7 @@ export default {
       colors: {
         main: "#000",
         twitter: "rgb(22, 24, 28)",
+        twitter_btn: "rgb(29, 155, 240)",
       }
     },
   },

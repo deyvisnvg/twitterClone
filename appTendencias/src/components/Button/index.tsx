@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Variant, Size } from "../../types/core";
+import { Variant, Size, FontWeight } from "../../types/core";
 
 interface Props {
     text: string;
@@ -9,6 +9,7 @@ interface Props {
     variant?: Variant;
     size?: Size;
     dinamic?: boolean;
+    fontWeight?: FontWeight;
 }
 
 interface Color {
@@ -17,12 +18,13 @@ interface Color {
 
 export default function Button({
     text,
-    /*handleClick,
-    isFollowing = false,
+    handleClick,
+    /*isFollowing = false,
     setIsTextState,
     dinamic = false,*/
     variant = "default",
     size = "small",
+    fontWeight = "normal",
 }: Props) {
 
     /*const buttonStyle = classNames(
@@ -40,10 +42,10 @@ export default function Button({
         success: "bg-green-500 text-white",
         danger: "bg-red-500 text-white",
         warning: "bg-yellow-500 text-black",
-        info: "bg-sky-500 text-white",
+        info: "bg-twitter_btn text-white",
         light: "bg-slate-200 text-white",
         dark: "bg-black text-white",
-        link: "text-blue-700",
+        link: "text-sky-500/90",
     };
 
     const sizes = {
@@ -52,18 +54,27 @@ export default function Button({
         large: "py-5 px-10",
     };
 
+    const weight = {
+        extralight: "font-extralight",
+        light: "font-light",
+        normal: "font-normal",
+        medium: "font-medium",
+        semibold: "font-semibold",
+        bold: "font-bold",
+    };
+
     return (
         <>
             <button
-                className={`${colors[variant]} ${sizes[size]} rounded-full font-bold`}
-               /*className={`${dinamic
-                    ? buttonStyle
-                    : `${colors[variant]} ${sizes[size]} rounded-full font-bold`}`
-                }
-                onClick={handleClick}
-                onMouseEnter={() => setIsTextState(true)}
-                onMouseLeave={() => setIsTextState(false)}
-                */
+                className={`${colors[variant]} ${sizes[size]} ${weight[fontWeight]} rounded-full`}
+            /*className={`${dinamic
+                 ? buttonStyle
+                 : `${colors[variant]} ${sizes[size]} rounded-full font-bold`}`
+             }
+             onMouseEnter={() => setIsTextState(true)}
+             onMouseLeave={() => setIsTextState(false)}
+             */
+             onClick={handleClick}
             >
                 {text}
             </button>

@@ -15,7 +15,17 @@ export default function Card({ classification, name, count_post }: Props) {
                     <h1 className="font-bold">{name}</h1>
                     <span className="text-xs text-gray-200/40">{count_post}</span>
                 </div>
-                <div className='absolute top-3 right-5 text-gray-200/40 hover:bg-blue-400/20 hover:text-sky-500 rounded-full p-2'>
+                <div className='absolute top-3 right-3 
+                    text-gray-200/40 
+                    hover:bg-blue-400/20 
+                    hover:text-sky-500 
+                    rounded-full 
+                    p-2 
+                    hint--bottom 
+                    hint--no-arrow 
+                    hint--rounded'
+                    aria-label='Más opciones'
+                >
                     <IconDots className='w-4 h-4' />
                 </div>
             </div>

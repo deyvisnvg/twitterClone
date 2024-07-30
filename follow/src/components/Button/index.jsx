@@ -1,12 +1,12 @@
 import classNames from "classnames";
 
 export default function Button({
-    text,
     handleClick,
     isFollowing = false,
     setIsTextState,
+    text,
     dinamic = false,
-    variant = "transparent",
+    variant = "link",
     size = "small",
 }) {
     /*const buttonStyle = classNames(
@@ -17,11 +17,20 @@ export default function Button({
         }
     )*/
 
-    const buttonStyle = classNames(
+    /* const buttonStyle = classNames(
         "rounded-2xl py-2 text-sm",
         {
             "border-2 text-white hover:text-red-600 hover:border-red-600 w-40": isFollowing,
             "bg-white px-5 hover:bg-gray-200": !isFollowing,
+        }
+    ) */
+
+
+    const buttonStyle = classNames(
+        "rounded-2xl h-9 text-sm",
+        {
+            "border-2 text-white hover:text-red-600 hover:border-red-600 w-40": isFollowing,
+            "bg-white px-5 hover:bg-gray-200 text-black font-bold": !isFollowing
         }
     )
 
@@ -48,7 +57,7 @@ export default function Button({
         <>
             <button
                 //className="text-blue-700"
-                className={`${dinamic? buttonStyle: colors[variant]} ${sizes[size]}`}
+                className={`${dinamic ? buttonStyle : colors[variant]} ${sizes[size]}`}
                 onClick={handleClick}
                 onMouseEnter={() => setIsTextState(true)}
                 onMouseLeave={() => setIsTextState(false)}

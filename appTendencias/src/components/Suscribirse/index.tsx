@@ -9,6 +9,7 @@ export default function Suscribirse() {
         <Button
           text='Suscribirse'
           variant='info'
+          fontWeight="bold"
         />
       </aside>
     </>
